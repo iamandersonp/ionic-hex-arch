@@ -16,8 +16,8 @@ export const environment = {
   timeOut: 10000,
   minInterval: 30000,
   showLogs: false,
-  defaultLanguage: 'es',
-  languages: ['es'],
+  defaultLanguage: 'en',
+  languages: ['en'],
   dbVersion: 1.0,
   logLevel: 0
 };
