@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+
+git stash -q --keep-index
+
+npm run copy:enviroment && npm run test:coverage && npm run build_TEST && npm run prettier:write && npm run compodoc:build  && rm -rf dist
+
+status=$?
+
+git stash pop -q
+
+exit $status
