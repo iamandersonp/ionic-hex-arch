@@ -1,3 +1,6 @@
+/**
+ * Mock for LoggerService
+ */
 export const loggerService = {
   init: jest.fn(),
   start: jest.fn(),
