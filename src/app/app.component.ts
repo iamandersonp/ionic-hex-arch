@@ -8,6 +8,11 @@ import {
   RouterLink
 } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { MenuComponent } from './shared/ui/components/menu/menu.component';
+import {
+  IntrefaceMenu,
+  TipoLink
+} from './shared/ui/components/menu/interface-menu';
 
 /**
  * The root component of the application.
@@ -20,7 +25,12 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
   standalone: true,
-  imports: [IonicModule, RouterLinkActive, RouterLink]
+  imports: [
+    IonicModule,
+    RouterLinkActive,
+    RouterLink,
+    MenuComponent
+  ]
 })
 export class AppComponent {
   /**
@@ -43,4 +53,26 @@ export class AppComponent {
   public get environmentInjector(): EnvironmentInjector {
     return this._environmentInjector;
   }
+
+  /**
+   * TipoLink enum to use in the template.
+   *
+   * @type {typeof TipoLink}
+   * @memberof AppComponent
+   */
+  public tipoLink: typeof TipoLink = TipoLink;
+
+  /**
+   * List of menu items.
+   *
+   * @type {IntrefaceMenu[]}
+   * @memberof AppComponent
+   */
+  public menu: IntrefaceMenu[] = [
+    {
+      title: 'Home',
+      url: ['/'],
+      icon: 'home'
+    }
+  ];
 }

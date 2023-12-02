@@ -1,0 +1,15 @@
+{
+  "title": "Business Card",
+  "menu": {
+    "home": "Home",
+    "en": "English"
+  },
+  "common": {
+    "appTitle": "Visit Card"
+  },
+  "butons": {
+    "mainMenu": "Main menu",
+    "back": "Back",
+    "close": "Close"
+  }
+}

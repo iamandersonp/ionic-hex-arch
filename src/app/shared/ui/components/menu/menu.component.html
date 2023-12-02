@@ -1,0 +1,79 @@
+<ion-list>
+  <ion-list-header *ngIf="displayLogo === true">
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-button
+          role="button"
+          size="small"
+          [attr.aria-label]="'close'"
+          (click)="closeMenu()"
+          *ngIf="!visible"
+        >
+          <app-icon
+            [name]="'close'"
+            slot="start"
+            size="small"
+          ></app-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title (click)="toggleDebug()">TV Maze</ion-title>
+    </ion-toolbar>
+  </ion-list-header>
+  <ion-menu-toggle
+    *ngIf="displayLogo === true"
+    color="primary"
+    auto-hide="false"
+  >
+    <ng-container *ngIf="tipoMenu === tipoLink.INTERNAL">
+      <ion-item
+        *ngFor="let p of appPages; let i = index"
+        color="primary"
+        routerDirection="root"
+        [routerLink]="p.url"
+        [target]="p.target"
+        lines="none"
+        detail
+        routerLinkActive="selected"
+        data-test="nav-list-items"
+      >
+        <app-icon slot="start" [name]="p.icon"></app-icon>
+        <app-label [attr.aria-label]="p.title">{{
+          p.title
+        }}</app-label>
+      </ion-item>
+    </ng-container>
+    <ng-container *ngIf="debug">
+      <ion-item
+        color="primary"
+        routerDirection="root"
+        routerLink="/logger"
+        lines="none"
+        detail
+        routerLinkActive="selected"
+        data-test="nav-list-items"
+      >
+        <app-icon slot="start" [name]="'bug'"></app-icon>
+        <app-label [attr.aria-label]="'Debug'">
+          Depurador
+        </app-label>
+      </ion-item>
+    </ng-container>
+  </ion-menu-toggle>
+  <ng-container *ngIf="tipoMenu === tipoLink.EXTERNAL">
+    <ion-item
+      *ngFor="let p of appPages; let i = index"
+      color="primary"
+      routerDirection="root"
+      [href]="p.link"
+      [target]="p.target"
+      lines="none"
+      detail
+      routerLinkActive="selected"
+    >
+      <app-icon slot="start" [name]="p.icon"></app-icon>
+      <app-label [attr.aria-label]="p.title">{{
+        p.title
+      }}</app-label>
+    </ion-item>
+  </ng-container>
+</ion-list>
