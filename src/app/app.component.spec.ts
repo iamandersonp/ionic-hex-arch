@@ -7,6 +7,9 @@ import {
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
+import { InternationalizationAdapter } from './shared/infrastructure/adapters/internationalization-adapter';
+import { l18nSrvMock } from './shared/mocks/l18ns.mock';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -14,7 +17,16 @@ describe('AppComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [
+        RouterTestingModule,
+        TranslateModule.forRoot()
+      ],
+      providers: [
+        {
+          provide: InternationalizationAdapter,
+          useValue: l18nSrvMock
+        }
+      ],
       teardown: { destroyAfterEach: false }
     }).compileComponents();
     fixture = TestBed.createComponent(AppComponent);
@@ -26,7 +38,12 @@ describe('AppComponent', () => {
     jest.clearAllMocks();
   });
 
-  it('should create the app', () => {
-    expect(component).toBeTruthy();
+  describe('initializa', () => {
+    it('should create the app', () => {
+      expect(component).toBeTruthy();
+    });
+    it(`should have l18nSrv instance`, () => {
+      expect(component.l18nSrv).toBeTruthy();
+    });
   });
 });

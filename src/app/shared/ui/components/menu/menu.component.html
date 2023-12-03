@@ -16,7 +16,9 @@
           ></app-icon>
         </ion-button>
       </ion-buttons>
-      <ion-title (click)="toggleDebug()">TV Maze</ion-title>
+      <ion-title (click)="toggleDebug()">{{
+        'common.appTitle' | translate
+      }}</ion-title>
     </ion-toolbar>
   </ion-list-header>
   <ion-menu-toggle
@@ -37,9 +39,12 @@
         data-test="nav-list-items"
       >
         <app-icon slot="start" [name]="p.icon"></app-icon>
-        <app-label [attr.aria-label]="p.title">{{
-          p.title
-        }}</app-label>
+        <app-label
+          [attr.aria-label]="p.title | translate"
+          >{{
+            p.title | translateMessage | translate
+          }}</app-label
+        >
       </ion-item>
     </ng-container>
     <ng-container *ngIf="debug">
@@ -71,8 +76,8 @@
       routerLinkActive="selected"
     >
       <app-icon slot="start" [name]="p.icon"></app-icon>
-      <app-label [attr.aria-label]="p.title">{{
-        p.title
+      <app-label [attr.aria-label]="p.title | translate">{{
+        p.title | translateMessage | translate
       }}</app-label>
     </ion-item>
   </ng-container>

@@ -13,6 +13,7 @@ import {
   IntrefaceMenu,
   TipoLink
 } from './shared/ui/components/menu/interface-menu';
+import { InternationalizationAdapter } from './shared/infrastructure/adapters/internationalization-adapter';
 
 /**
  * The root component of the application.
@@ -55,6 +56,28 @@ export class AppComponent {
   }
 
   /**
+   * inject the InternationalizationAdapter
+   *
+   * @private
+   * @type {InternationalizationAdapter}
+   * @memberof AppComponent
+   */
+  private _l18nSrv: InternationalizationAdapter = inject(
+    InternationalizationAdapter
+  );
+
+  /**
+   * Getter for the InternationalizationAdapter
+   *
+   * @readonly
+   * @type {InternationalizationAdapter}
+   * @memberof AppComponent
+   */
+  public get l18nSrv(): InternationalizationAdapter {
+    return this._l18nSrv;
+  }
+
+  /**
    * TipoLink enum to use in the template.
    *
    * @type {typeof TipoLink}
@@ -70,7 +93,7 @@ export class AppComponent {
    */
   public menu: IntrefaceMenu[] = [
     {
-      title: 'Home',
+      title: 'menu.home',
       url: ['/'],
       icon: 'home'
     }

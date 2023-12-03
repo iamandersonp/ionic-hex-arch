@@ -7,6 +7,9 @@ import { IonicModule, Platform } from '@ionic/angular';
 
 import { MenuComponent } from './menu.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { InternationalizationAdapter } from '../../../infrastructure/adapters/internationalization-adapter';
+import { platformMock } from '../../../mocks/platform.mock';
+import { l18nSrvMock } from '../../../mocks/l18ns.mock';
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
@@ -17,6 +20,16 @@ describe('MenuComponent', () => {
       imports: [
         IonicModule.forRoot(),
         TranslateModule.forRoot()
+      ],
+      providers: [
+        {
+          provide: Platform,
+          useValue: platformMock
+        },
+        {
+          provide: InternationalizationAdapter,
+          useValue: l18nSrvMock
+        }
       ]
     }).compileComponents();
 

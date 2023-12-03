@@ -1,11 +1,11 @@
 {
-  "title": "Business Card",
+  "title": "TV Maze",
   "menu": {
     "home": "Home",
     "en": "English"
   },
   "common": {
-    "appTitle": "Visit Card"
+    "appTitle": "TV Maze"
   },
   "butons": {
     "mainMenu": "Main menu",

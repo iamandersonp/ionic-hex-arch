@@ -16,13 +16,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { IntrefaceMenu, TipoLink } from './interface-menu';
 import { LabelComponent } from '../label/label.component';
 import { IconComponent } from '../icon/icon.component';
-0;
+import { InternationalizationAdapter } from '../../../infrastructure/adapters/internationalization-adapter';
+import { TranslateMessagePipe } from '../../../ui/utils/translate-message.pipe';
+
 /**
  * Handle the left menu on the sidebar
  *
  * @export
  * @class MenuComponent
- * @implements {OnInit}
  */
 @Component({
   selector: 'app-menu',
@@ -35,7 +36,8 @@ import { IconComponent } from '../icon/icon.component';
     RouterModule,
     IonicModule,
     LabelComponent,
-    IconComponent
+    IconComponent,
+    TranslateMessagePipe
   ]
 })
 export class MenuComponent implements OnInit {
@@ -56,6 +58,28 @@ export class MenuComponent implements OnInit {
    * @memberof MenuComponent
    */
   private _platform: Platform = inject(Platform);
+
+  /**
+   * inject InternationalizationAdapter
+   *
+   * @private
+   * @type {InternationalizationAdapter}
+   * @memberof MenuComponent
+   */
+  private _l18nSrv: InternationalizationAdapter = inject(
+    InternationalizationAdapter
+  );
+
+  /**
+   * getter for l18nSrv
+   *
+   * @readonly
+   * @type {InternationalizationAdapter}
+   * @memberof MenuComponent
+   */
+  public get l18nSrv(): InternationalizationAdapter {
+    return this._l18nSrv;
+  }
 
   /**
    * input propiety to display/hide the bank logo

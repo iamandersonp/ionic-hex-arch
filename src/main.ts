@@ -2,10 +2,11 @@ import {
   enableProdMode,
   importProvidersFrom
 } from '@angular/core';
-
-import { environment } from './environments/environment';
-import { AppComponent } from './app/app.component';
-import { routes } from './app/app.routes';
+import { HttpClient } from '@angular/common/http';
+import {
+  RouteReuseStrategy,
+  provideRouter
+} from '@angular/router';
 import {
   BrowserModule,
   bootstrapApplication
@@ -14,16 +15,33 @@ import {
   IonicRouteStrategy,
   IonicModule
 } from '@ionic/angular';
-import {
-  RouteReuseStrategy,
-  provideRouter
-} from '@angular/router';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { Drivers } from '@ionic/storage';
+import {
+  TranslateLoader,
+  TranslateModule
+} from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+import { environment } from './environments/environment';
+import { AppComponent } from './app/app.component';
+import { routes } from './app/app.routes';
 import { SharedProvidersModule } from '@shared/shared-providers.module';
 
 if (environment.production) {
   enableProdMode();
+}
+/**
+ * loader for the internationalization service
+ *
+ * @export
+ * @param {HttpClient} http
+ * @return {*}  {TranslateHttpLoader}
+ */
+export function httpLoaderFactory(
+  http: HttpClient
+): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
 }
 
 bootstrapApplication(AppComponent, {
@@ -36,14 +54,21 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(
       BrowserModule,
       IonicModule.forRoot(),
+      SharedProvidersModule,
+      TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useFactory: httpLoaderFactory,
+          deps: [HttpClient]
+        }
+      }),
       IonicStorageModule.forRoot({
         name: '__TV_MAZE_APP',
         driverOrder: [
           Drivers.IndexedDB,
           Drivers.LocalStorage
         ]
-      }),
-      SharedProvidersModule
+      })
     )
   ]
 }).catch((err) => console.log(err));

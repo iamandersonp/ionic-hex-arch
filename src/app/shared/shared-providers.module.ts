@@ -13,6 +13,8 @@ import { LoggerAdapter } from './infrastructure/adapters/logger-adapter';
 import { StorageAdapter } from './infrastructure/adapters/storage-adapter';
 import { LoggerService } from './infrastructure/logger.service';
 import { StorageService } from './infrastructure/storage.service';
+import { InternationalizationAdapter } from './infrastructure/adapters/internationalization-adapter';
+import { InternationalizationService } from './infrastructure/internationalization.service';
 
 /**
  * Initialicethe translation service by preloading the language
@@ -50,6 +52,10 @@ export function appInitializerFactory(
     {
       provide: LoggerAdapter,
       useClass: LoggerService
+    },
+    {
+      provide: InternationalizationAdapter,
+      useClass: InternationalizationService
     },
     {
       provide: HttpAdapter,
