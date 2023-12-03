@@ -18,6 +18,7 @@ import { LabelComponent } from '../label/label.component';
 import { IconComponent } from '../icon/icon.component';
 import { InternationalizationAdapter } from '../../../infrastructure/adapters/internationalization-adapter';
 import { TranslateMessagePipe } from '../../../ui/utils/translate-message.pipe';
+import { pagesPaths } from '../../../../../app/app.routes';
 
 /**
  * Handle the left menu on the sidebar
@@ -120,6 +121,14 @@ export class MenuComponent implements OnInit {
    * @memberof MenuComponent
    */
   public tipoLink: typeof TipoLink = TipoLink;
+
+  /**
+   * enum with the list of pages paths
+   *
+   * @type {typeof pagesPaths}
+   * @memberof MenuComponent
+   */
+  public AppPage: typeof pagesPaths = pagesPaths;
 
   /**
    * if the debug mode is active
