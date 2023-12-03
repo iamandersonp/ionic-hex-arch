@@ -18,6 +18,9 @@ import {
   RouteReuseStrategy,
   provideRouter
 } from '@angular/router';
+import { IonicStorageModule } from '@ionic/storage-angular';
+import { Drivers } from '@ionic/storage';
+import { SharedProvidersModule } from '@shared/shared-providers.module';
 
 if (environment.production) {
   enableProdMode();
@@ -32,7 +35,15 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes),
     importProvidersFrom(
       BrowserModule,
-      IonicModule.forRoot()
+      IonicModule.forRoot(),
+      IonicStorageModule.forRoot({
+        name: '__TV_MAZE_APP',
+        driverOrder: [
+          Drivers.IndexedDB,
+          Drivers.LocalStorage
+        ]
+      }),
+      SharedProvidersModule
     )
   ]
 }).catch((err) => console.log(err));

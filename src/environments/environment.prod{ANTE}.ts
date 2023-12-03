@@ -17,5 +17,9 @@ export const environment = {
   defaultLanguage: 'en',
   languages: ['en'],
   dbVersion: 1.0,
-  logLevel: 0
+  logLevel: 0,
+  storeKeys: {
+    DB_VERSION: 'db_version',
+    USER_LANGUAGE: 'user_language'
+  }
 };
