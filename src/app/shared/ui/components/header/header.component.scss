@@ -1,0 +1,26 @@
+ion-header {
+  font-size: var(--ion-font-size);
+  background: var(
+    --ion-item-primary,
+    var(--ion-color-primary, #fff)
+  );
+  ion-menu-button {
+    &:focus {
+      outline: var(--ion-color-primary);
+    }
+  }
+}
+/*
+ * Centra en el header el logo del banco
+*/
+ion-title {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding-top: 5pt;
+  height: 44px;
+  font-size: var(--ion-font-size);
+  color: var(--ion-text-color);
+}
