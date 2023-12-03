@@ -4,6 +4,13 @@ import { HeaderComponent } from '../../shared/ui/components/header/header.compon
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateMessagePipe } from '../../shared/ui/utils/translate-message.pipe';
 
+/**
+ * Dashboard page to show the list of shows
+ *
+ * @export
+ * @class DashBoardPage
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
@@ -17,7 +24,8 @@ import { TranslateMessagePipe } from '../../shared/ui/utils/translate-message.pi
   ]
 })
 export class DashBoardPage implements OnInit {
-  constructor() {}
-
+  /**
+   *  @ignore
+   */
   ngOnInit() {}
 }
