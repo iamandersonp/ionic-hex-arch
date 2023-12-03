@@ -7,6 +7,10 @@
   "common": {
     "appTitle": "TV Maze"
   },
+  "pages": {
+    "dashboard": "Dashboard",
+    "debug": "Debugger"
+  },
   "butons": {
     "mainMenu": "Main menu",
     "back": "Back",
