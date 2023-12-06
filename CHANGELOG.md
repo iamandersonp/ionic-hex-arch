@@ -1,6 +1,8 @@
 ## 0.2.0 (2023-12-06)
 
-* 0.2.0 ([089bbc7](https://github.com/iamandersonp/ionic-hex-arch/commit/089bbc7))
+* chore: :lipstick: update resume view ([602017a](https://github.com/iamandersonp/ionic-hex-arch/commit/602017a))
+* fix: :bug: fix http implementation and return data on infra ([ab1dd31](https://github.com/iamandersonp/ionic-hex-arch/commit/ab1dd31))
+* 0.2.0 ([3443661](https://github.com/iamandersonp/ionic-hex-arch/commit/3443661))
 
 
 
