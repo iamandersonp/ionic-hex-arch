@@ -8,7 +8,9 @@ import { Routes } from '@angular/router';
  */
 export const pagesPaths = {
   dashboard: 'dashboard',
-  logger: 'logger'
+  logger: 'logger',
+  show: 'show',
+  notFound: 'not-found'
 };
 
 export const routes: Routes = [

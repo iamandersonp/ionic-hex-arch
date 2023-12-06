@@ -5,6 +5,7 @@ import { ShowDTO } from '@core/domain/model/show.model';
 import { IonicModule } from '@ionic/angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateMessagePipe } from '@shared/ui/utils/translate-message.pipe';
+import { pagesPaths } from '@src/app/app.routes';
 
 /**
  * Component to display a resume of a show
@@ -34,6 +35,14 @@ export class ResumeShowComponent implements OnInit {
    * @memberof ResumeShowComponent
    */
   @Input() show?: ShowDTO;
+
+  /**
+   * enum with the list of pages paths
+   *
+   * @type {typeof pagesPaths}
+   * @memberof ResumeShowComponent
+   */
+  public AppPage: typeof pagesPaths = pagesPaths;
 
   /**
    *  @ignore
