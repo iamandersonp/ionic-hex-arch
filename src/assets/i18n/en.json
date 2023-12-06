@@ -5,11 +5,14 @@
     "en": "English"
   },
   "common": {
-    "appTitle": "TV Maze"
+    "appTitle": "TV Maze",
+    "conectionError": "Failed to connect to server"
   },
   "pages": {
     "dashboard": "Dashboard",
-    "debug": "Debugger"
+    "debug": "Debugger",
+    "shows": "Shows",
+    "notFound": "Page not Found"
   },
   "butons": {
     "mainMenu": "Main menu",

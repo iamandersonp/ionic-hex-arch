@@ -32,5 +32,13 @@ export const routes: Routes = [
       import('@pages/debuger/debuger.page').then(
         (m) => m.DebugerPage
       )
-  }
+  },
+  {
+    path: pagesPaths.notFound,
+    loadComponent: () =>
+      import('@pages/error/error.page').then(
+        (m) => m.ErrorPage
+      )
+  },
+  { path: '**', redirectTo: pagesPaths.notFound }
 ];
