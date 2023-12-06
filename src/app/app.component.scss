@@ -15,3 +15,12 @@ ion-menu.md ion-content {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+.safe-area {
+  margin-top: constant(safe-area-inset-top);
+  margin-top: env(safe-area-inset-top);
+}
+ion-split-pane {
+  --side-width: 200px;
+  --side-max-width: 350px;
+}

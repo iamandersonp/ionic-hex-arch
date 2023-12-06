@@ -5,9 +5,14 @@
     "types": ["jest", "node"],
     "module": "commonjs",
     "emitDecoratorMetadata": true,
-    "allowJs": true
+    "allowJs": true,
+    "paths": {
+      "@shared/*": ["src/app/shared/*"],
+      "@pages/*": ["src/app/pages/*"],
+      "@core/*": ["src/app/core/*"],
+      "@src/*": ["src/*"]
+    }
   },
-  "files": ["src/setup.jest.ts"],
   "include": ["**/*.spec.ts"],
   "exclude": ["plugins/", "cypress/", "cypres.config.ts"]
 }

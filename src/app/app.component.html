@@ -1,27 +1,20 @@
 <ion-app>
-  <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
-      <ion-content>
-        <ion-list id="inbox-list">
-          <ion-list-header>TV Maze</ion-list-header>
-
-          <ion-menu-toggle auto-hide="false">
-            <ion-item
-              routerDirection="root"
-              lines="none"
-              detail="false"
-              routerLinkActive="selected"
-            >
-              <ion-icon
-                aria-hidden="true"
-                slot="start"
-                [ios]="'home-outline'"
-                [md]="'home-sharp'"
-              ></ion-icon>
-              <ion-label>Home</ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-        </ion-list>
+  <ion-split-pane
+    when="md"
+    color="primary"
+    contentId="main-content"
+  >
+    <ion-menu
+      contentId="main-content"
+      type="overlay"
+      class="safe-area"
+    >
+      <ion-content color="primary">
+        <app-menu
+          [appPages]="menu"
+          [tipoMenu]="tipoLink.INTERNAL"
+          [displayLogo]="true"
+        ></app-menu>
       </ion-content>
     </ion-menu>
     <ion-router-outlet

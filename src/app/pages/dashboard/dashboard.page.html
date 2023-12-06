@@ -1,0 +1,32 @@
+<app-header
+  [tittle]="'common.appTitle' | translateMessage | translate"
+  [color]="'primary'"
+></app-header>
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title
+        >{{ 'pages.dashboard' | translate }}</ion-title
+      >
+    </ion-toolbar>
+  </ion-header>
+  <ng-container *ngIf="vm$ | async as vm; else Loading">
+    <ng-container *ngIf="vm.remoteError !== ''">
+      <p>{{ 'common.conectionError' | translate}}</p>
+    </ng-container>
+    <ng-container
+      *ngIf="vm.remoteStatus === 'loading' && vm.remoteError === ''"
+    >
+      <app-loading></app-loading>
+    </ng-container>
+    <ion-list *ngIf="vm.data |async as data">
+      <app-resume-show
+        *ngFor="let show of data"
+        [show]="show"
+      ></app-resume-show>
+    </ion-list>
+  </ng-container>
+  <ng-template #Loading>
+    <app-loading></app-loading>
+  </ng-template>
+</ion-content>

@@ -2,10 +2,11 @@ import {
   enableProdMode,
   importProvidersFrom
 } from '@angular/core';
-
-import { environment } from './environments/environment';
-import { AppComponent } from './app/app.component';
-import { routes } from './app/app.routes';
+import { HttpClient } from '@angular/common/http';
+import {
+  RouteReuseStrategy,
+  provideRouter
+} from '@angular/router';
 import {
   BrowserModule,
   bootstrapApplication
@@ -14,13 +15,34 @@ import {
   IonicRouteStrategy,
   IonicModule
 } from '@ionic/angular';
+import { IonicStorageModule } from '@ionic/storage-angular';
+import { Drivers } from '@ionic/storage';
 import {
-  RouteReuseStrategy,
-  provideRouter
-} from '@angular/router';
+  TranslateLoader,
+  TranslateModule
+} from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+import { environment } from './environments/environment';
+import { AppComponent } from './app/app.component';
+import { routes } from './app/app.routes';
+import { SharedProvidersModule } from '@shared/shared-providers.module';
+import { CoreModule } from '@core/core.module';
 
 if (environment.production) {
   enableProdMode();
+}
+/**
+ * loader for the internationalization service
+ *
+ * @export
+ * @param {HttpClient} http
+ * @return {*}  {TranslateHttpLoader}
+ */
+export function httpLoaderFactory(
+  http: HttpClient
+): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
 }
 
 bootstrapApplication(AppComponent, {
@@ -32,7 +54,23 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes),
     importProvidersFrom(
       BrowserModule,
-      IonicModule.forRoot()
+      IonicModule.forRoot(),
+      SharedProvidersModule,
+      TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useFactory: httpLoaderFactory,
+          deps: [HttpClient]
+        }
+      }),
+      CoreModule,
+      IonicStorageModule.forRoot({
+        name: '__TV_MAZE_APP',
+        driverOrder: [
+          Drivers.IndexedDB,
+          Drivers.LocalStorage
+        ]
+      })
     )
   ]
 }).catch((err) => console.log(err));

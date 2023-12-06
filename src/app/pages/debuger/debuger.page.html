@@ -1,0 +1,39 @@
+<app-header
+  [tittle]="'common.appTitle' | translateMessage | translate"
+  [color]="'primary'"
+></app-header>
+<ion-content class="ion-padding">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>{{ 'pages.debug' | translate }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list lines="none">
+    <ion-item
+      *ngFor="let p of logger.logEvents"
+      class="{{p.tipo}}  ion-padding-top"
+    >
+      {{p.text}}
+    </ion-item>
+  </ion-list>
+  <ion-fab
+    horizontal="end"
+    vertical="bottom"
+    slot="fixed"
+    id="up"
+  >
+    <ion-fab-button role="button" (click)="goUp()">
+      <app-icon name="chevron-up"></app-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab
+    horizontal="end"
+    vertical="bottom"
+    slot="fixed"
+    id="dw"
+  >
+    <ion-fab-button role="button" (click)="goDown()">
+      <app-icon name="chevron-down"></app-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar [color]="color">
+    <ion-buttons slot="start">
+      <ion-menu-button
+        lang="{{ l18nSrv.language }}"
+        [attr.aria-label]="
+          'butons.mainMenu' | translateMessage | translate
+        "
+      ></ion-menu-button>
+      <span
+        slot="start"
+        title="{{ 'butons.back' | translate }}"
+        lang="{{ l18nSrv.language }}"
+        style="font-size: x-large"
+        *ngIf="back"
+      >
+        <ion-back-button
+          title="{{ 'butons.back' | translate }}"
+          [attr.aria-label]="
+            'butons.back' | translateMessage | translate
+          "
+          lang="{{ l18nSrv.language }}"
+          text=""
+        >
+        </ion-back-button>
+      </span>
+    </ion-buttons>
+    <ion-title>{{ tittle }}</ion-title>
+  </ion-toolbar>
+</ion-header>

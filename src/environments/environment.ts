@@ -16,10 +16,15 @@ export const environment = {
   timeOut: 10000,
   minInterval: 30000,
   showLogs: false,
-  defaultLanguage: 'es',
-  languages: ['es'],
+  defaultLanguage: 'en',
+  languages: ['en'],
   dbVersion: 1.0,
-  logLevel: 0
+  logLevel: 0,
+  baseUrl: 'https://api.tvmaze.com/',
+  storeKeys: {
+    DB_VERSION: 'db_version',
+    USER_LANGUAGE: 'user_language'
+  }
 };
 
 /*

@@ -1,0 +1,12 @@
+ion-spinner {
+  position: absolute;
+  left: 20vh;
+  top: 20vh;
+  transform: scale(4);
+}
+
+ion-skeleton-text {
+  --border-radius: 9999px;
+  --background: var(--ion-color-primary);
+  --background-rgb: 137, 28, 6;
+}
