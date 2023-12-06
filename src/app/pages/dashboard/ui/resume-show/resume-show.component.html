@@ -1,0 +1,12 @@
+<ion-item
+  [routerLink]="['/show', show?.id]"
+  routerDirection="forward"
+>
+  <ion-avatar slot="start">
+    <img [src]="show?.image?.medium" />
+  </ion-avatar>
+  <ion-label>
+    <h2>{{ show?.name }}</h2>
+    <p>{{ show?.genres?.join(', ') }}</p>
+  </ion-label>
+</ion-item>
