@@ -28,7 +28,7 @@ export abstract class ShowRepository extends GenericRepository {
   abstract search(
     query: string,
     type?: searchType
-  ): Observable<ShowDTO[] | ShowDTO>;
+  ): Observable<ShowDTO[]>;
 
   /**
    * Get a show by id

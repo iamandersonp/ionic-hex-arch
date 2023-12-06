@@ -83,15 +83,14 @@ export class ShowService extends ShowRepository {
   override search(
     query: string,
     type: searchType = 'multi'
-  ): Observable<ShowDTO[] | ShowDTO> {
+  ): Observable<ShowDTO[]> {
     this.logger.start('ShowService() - search');
     const url =
       type === 'multi'
         ? environment.baseUrl + `search/shows?q=${query}`
-        : environment.baseUrl + `singlesearch/${query}`;
-    return type === 'multi'
-      ? this.dowloadMulti(url)
-      : this.dowloadSingle(url);
+        : environment.baseUrl +
+          `singlesearch/shows?q=${query}`;
+    return this.dowloadMulti(url);
   }
 
   /**
@@ -147,7 +146,6 @@ export class ShowService extends ShowRepository {
         const shows: ShowDTO[] = [];
         this.subjecError.next('');
         this.subjectLoading.next('done');
-        data.map((show) => shows.push(show.show));
         this.logger.end('ShowService() - dowload');
         return shows;
       })

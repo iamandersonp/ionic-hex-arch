@@ -27,6 +27,7 @@ import { environment } from './environments/environment';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
 import { SharedProvidersModule } from '@shared/shared-providers.module';
+import { CoreModule } from '@core/core.module';
 
 if (environment.production) {
   enableProdMode();
@@ -62,6 +63,7 @@ bootstrapApplication(AppComponent, {
           deps: [HttpClient]
         }
       }),
+      CoreModule,
       IonicStorageModule.forRoot({
         name: '__TV_MAZE_APP',
         driverOrder: [
