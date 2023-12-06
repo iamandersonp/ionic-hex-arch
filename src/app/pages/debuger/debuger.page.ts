@@ -8,11 +8,11 @@ import { CommonModule } from '@angular/common';
 import { IonContent, IonicModule } from '@ionic/angular';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { HeaderComponent } from '../../shared/ui/components/header/header.component';
-import { TranslateMessagePipe } from '../../shared/ui/utils/translate-message.pipe';
-import { LoggerAdapter } from '../../shared/infrastructure/adapters/logger-adapter';
-import { InternationalizationAdapter } from '../../shared/infrastructure/adapters/internationalization-adapter';
-import { IconComponent } from '../../shared/ui/components/icon/icon.component';
+import { HeaderComponent } from '@shared/ui/components/header/header.component';
+import { TranslateMessagePipe } from '@shared/ui/utils/translate-message.pipe';
+import { LoggerAdapter } from '@shared/infrastructure/adapters/logger-adapter';
+import { InternationalizationAdapter } from '@shared/infrastructure/adapters/internationalization-adapter';
+import { IconComponent } from '@shared/ui/components/icon/icon.component';
 
 /**
  * Dashboard page to show the list of shows

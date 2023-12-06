@@ -11,8 +11,8 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { LabelComponent } from '../label/label.component';
 import { IconComponent } from '../icon/icon.component';
-import { InternationalizationAdapter } from '../../../infrastructure/adapters/internationalization-adapter';
-import { TranslateMessagePipe } from '../../../ui/utils/translate-message.pipe';
+import { InternationalizationAdapter } from '@shared/infrastructure/adapters/internationalization-adapter';
+import { TranslateMessagePipe } from '@shared/ui/utils/translate-message.pipe';
 
 /**
  * Component to display the header with back button and title

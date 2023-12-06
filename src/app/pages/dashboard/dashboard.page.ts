@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { HeaderComponent } from '../../shared/ui/components/header/header.component';
+import { HeaderComponent } from '@shared/ui/components/header/header.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { TranslateMessagePipe } from '../../shared/ui/utils/translate-message.pipe';
+import { TranslateMessagePipe } from '@shared/ui/utils/translate-message.pipe';
 
 /**
  * Dashboard page to show the list of shows

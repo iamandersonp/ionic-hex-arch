@@ -5,7 +5,7 @@ import {
   TranslateService
 } from '@ngx-translate/core';
 import { LoggerAdapter } from './adapters/logger-adapter';
-import { environment } from '../../../environments/environment';
+import { environment } from '@src/environments/environment';
 import { StorageService } from './storage.service';
 import { InternationalizationAdapter } from './adapters/internationalization-adapter';
 

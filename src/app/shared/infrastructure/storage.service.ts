@@ -3,7 +3,7 @@ import { Injectable, inject } from '@angular/core';
 import { StorageAdapter } from './adapters/storage-adapter';
 import { Storage } from '@ionic/storage-angular';
 import { LoggerAdapter } from './adapters/logger-adapter';
-import { environment } from '../../../environments/environment';
+import { environment } from '@src/environments/environment';
 
 /**
  * handle the device internal DB

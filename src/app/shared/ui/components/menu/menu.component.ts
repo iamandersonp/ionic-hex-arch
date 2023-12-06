@@ -16,9 +16,9 @@ import { TranslateModule } from '@ngx-translate/core';
 import { IntrefaceMenu, TipoLink } from './interface-menu';
 import { LabelComponent } from '../label/label.component';
 import { IconComponent } from '../icon/icon.component';
-import { InternationalizationAdapter } from '../../../infrastructure/adapters/internationalization-adapter';
-import { TranslateMessagePipe } from '../../../ui/utils/translate-message.pipe';
-import { pagesPaths } from '../../../../../app/app.routes';
+import { InternationalizationAdapter } from '@shared/infrastructure/adapters/internationalization-adapter';
+import { TranslateMessagePipe } from '@shared//ui/utils/translate-message.pipe';
+import { pagesPaths } from '@src/app/app.routes';
 
 /**
  * Handle the left menu on the sidebar

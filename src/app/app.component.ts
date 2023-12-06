@@ -8,12 +8,12 @@ import {
   RouterLink
 } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { MenuComponent } from './shared/ui/components/menu/menu.component';
+import { MenuComponent } from '@shared/ui/components/menu/menu.component';
 import {
   IntrefaceMenu,
   TipoLink
 } from './shared/ui/components/menu/interface-menu';
-import { InternationalizationAdapter } from './shared/infrastructure/adapters/internationalization-adapter';
+import { InternationalizationAdapter } from '@shared/infrastructure/adapters/internationalization-adapter';
 
 /**
  * The root component of the application.
