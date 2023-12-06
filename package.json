@@ -1,6 +1,6 @@
 {
   "name": "demo-app",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Anderson E. Peñaloza C. <designeromega@gmail.com>",
   "homepage": "https://designeromega.es/",
   "scripts": {
@@ -41,6 +41,10 @@
     "compodoc:build": "compodoc -p tsconfig.doc.json",
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
     "compodoc:serve": "compodoc -s",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major",
     "postinstall": "npm run copy:enviroment && npm run setup:git-hooks"
   },
   "private": true,
@@ -110,6 +114,7 @@
     "moment": "^2.29.4",
     "native-run": "^1.7.4",
     "prettier": "^2.8.8",
+    "standard-version": "^9.5.0",
     "ts-node": "~8.3.0",
     "typescript": "~4.9.5"
   },

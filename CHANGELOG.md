@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/iamandersonp/ionic-hex-arch/compare/v0.1.0...v0.2.1) (2023-12-06)
+
+
+### Bug Fixes
+
+* :bug: fix http implementation and return data on infra ([ab1dd31](https://github.com/iamandersonp/ionic-hex-arch/commits/ab1dd31d15e1ee20f15dc569a65fbf806a64b318))
+
 ## [0.2.0](https://github.com/iamandersonp/ionic-hex-arch/compare/v0.1.0...v0.2.0) (2023-12-06)
 
 
