@@ -9,6 +9,8 @@ import { DashBoardPage } from './dashboard.page';
 import { InternationalizationAdapter } from '../../shared/infrastructure/adapters/internationalization-adapter';
 import { l18nSrvMock } from '../../shared/mocks/l18ns.mock';
 import { TranslateModule } from '@ngx-translate/core';
+import { ShowsUsecaseService } from './aplication/shows-usecase.service';
+import { ShowRepository } from '../../core/domain/repositories/show-repository';
 
 describe('DashboardComponent', () => {
   let component: DashBoardPage;
@@ -24,6 +26,14 @@ describe('DashboardComponent', () => {
         {
           provide: InternationalizationAdapter,
           useValue: l18nSrvMock
+        },
+        {
+          provice: ShowsUsecaseService,
+          useValue: {}
+        },
+        {
+          provide: ShowRepository,
+          useValue: { search: jest.fn() }
         }
       ]
     }).compileComponents();
