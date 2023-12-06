@@ -421,27 +421,15 @@ export interface Schedule {
  * @export
  * @type OpcionalShow
  */
-export type OpcionalShow = Partial<Show>;
+export type ShowDTO = Partial<Show>;
 
 /**
- * ShowDTO Model
+ * Partial Type of RootShow
  *
  * @export
- * @interface ShowDTO
+ * @type OpcionalRootShow
  */
-export interface ShowDTO {
-  /**
-   * score of the show
-   *
-   * @type {number}
-   * @memberof ShowDTO
-   */
-  score?: number;
-  /**
-   * Info of the show
-   *
-   * @type {OpcionalShow}
-   * @memberof ShowDTO
-   */
-  show: OpcionalShow;
-}
+export type RootShowDTO = {
+  score: number;
+  show: ShowDTO;
+};

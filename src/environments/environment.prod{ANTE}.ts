@@ -18,6 +18,7 @@ export const environment = {
   languages: ['en'],
   dbVersion: 1.0,
   logLevel: 0,
+  baseUrl: 'https://api.tvmaze.com/',
   storeKeys: {
     DB_VERSION: 'db_version',
     USER_LANGUAGE: 'user_language'

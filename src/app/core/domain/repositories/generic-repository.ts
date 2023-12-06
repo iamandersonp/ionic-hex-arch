@@ -87,7 +87,7 @@ export abstract class GenericRepository {
    *
    * @memberof GenericRepository
    */
-  public set loading$(value: Observable<string>) {
+  public set loading$(value: Observable<string | null>) {
     this._loading$ = value;
   }
 
@@ -127,7 +127,7 @@ export abstract class GenericRepository {
    *
    * @memberof GenericRepository
    */
-  public set error$(value: Observable<string>) {
+  public set error$(value: Observable<string | null>) {
     this._error$ = value;
   }
 }
