@@ -129,7 +129,7 @@ export class ShowService extends ShowRepository {
       catchError((err) => {
         this.subjecError.next(err.message);
         this.logger.error(
-          'ShowService() - dowload: ' +
+          'ShowService() - dowloadMulti: ' +
             url +
             ' - ' +
             JSON.stringify(err)
@@ -138,15 +138,18 @@ export class ShowService extends ShowRepository {
       }),
       map((data) => {
         this.logger.debug(
-          'ShowService() - dowload: ' +
+          'ShowService() - dowloadMulti : ' +
             url +
-            ' - ' +
+            ' - data: ' +
             JSON.stringify(data)
         );
         const shows: ShowDTO[] = [];
         this.subjecError.next('');
         this.subjectLoading.next('done');
         this.logger.end('ShowService() - dowload');
+        data.forEach((element) => {
+          shows.push(element.show);
+        });
         return shows;
       })
     );
@@ -166,7 +169,7 @@ export class ShowService extends ShowRepository {
       catchError((err) => {
         this.subjecError.next(err.message);
         this.logger.error(
-          'ShowService() - dowload: ' +
+          'ShowService() - dowloadSingle : ' +
             url +
             ' - ' +
             JSON.stringify(err)
@@ -175,9 +178,9 @@ export class ShowService extends ShowRepository {
       }),
       map((data: ShowDTO) => {
         this.logger.debug(
-          'ShowService() - dowload: ' +
+          'ShowService() - dowloadSingle: ' +
             url +
-            ' - ' +
+            ' - data: ' +
             JSON.stringify(data)
         );
         this.subjecError.next('');

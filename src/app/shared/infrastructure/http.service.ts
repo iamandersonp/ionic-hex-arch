@@ -54,7 +54,7 @@ export class HttpService extends HttpAdapter {
    */
   public get<T>(url: string): Observable<T> {
     return this.http
-      .get<T>(url, { withCredentials: true })
+      .get<T>(url)
       .pipe(
         catchError((err: HttpErrorResponse) =>
           this.handleError('get', err)
@@ -73,7 +73,7 @@ export class HttpService extends HttpAdapter {
    */
   public put<T>(url: string, body?: any): Observable<T> {
     return this.http
-      .put<T>(url, body, { withCredentials: true })
+      .put<T>(url, body)
       .pipe(
         catchError((err: HttpErrorResponse) =>
           this.handleError('put', err)
@@ -92,7 +92,7 @@ export class HttpService extends HttpAdapter {
    */
   public post<T>(url: string, body?: any): Observable<T> {
     return this.http
-      .post<T>(url, body, { withCredentials: true })
+      .post<T>(url, body)
       .pipe(
         catchError((err: HttpErrorResponse) =>
           this.handleError('post', err)
